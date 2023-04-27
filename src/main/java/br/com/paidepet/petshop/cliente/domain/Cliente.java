@@ -20,7 +20,6 @@ import java.util.UUID;
 @Getter
 @Entity
 public class Cliente {
-
     @Id
     private UUID idCliente;
 
