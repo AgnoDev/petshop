@@ -1,7 +1,6 @@
 package br.com.paidepet.petshop.cliente.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -20,7 +19,9 @@ import java.util.UUID;
 @Getter
 @Entity
 public class Cliente {
-    @Id
+    @Id //como mapear UUID
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id", updatable = false, unique = true, nullable = false)
     private UUID idCliente;
 
     @NotBlank
@@ -52,7 +53,6 @@ public class Cliente {
                    String celular, String telefone,
                    Sexo sexo, LocalDate dataNascimento,
                    String cpf, boolean aceitaTermos) {
-        this.idCliente = UUID.randomUUID();
         this.nomeCompleto = nomeCompleto;
         this.email = email;
         this.celular = celular;
