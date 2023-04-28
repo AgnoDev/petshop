@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PetshopApplication {
 	@GetMapping
 	public String getHomeTest(){
-		return "PetShop - API Home";
+		return "Pai de Pet PetShop - Testando API Home";
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(PetshopApplication.class, args);

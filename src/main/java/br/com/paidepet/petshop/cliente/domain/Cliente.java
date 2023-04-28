@@ -8,7 +8,6 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.br.CPF;
-import org.springframework.validation.beanvalidation.SpringValidatorAdapter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
