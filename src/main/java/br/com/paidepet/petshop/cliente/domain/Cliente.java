@@ -7,9 +7,11 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
+
 @NoArgsConstructor(access = AccessLevel.PRIVATE)    //o Hibernate precisa de um construtor vazio
 @Getter
 @Entity
@@ -36,7 +38,7 @@ public class Cliente {
     private LocalDateTime dataHoraDoCadastro;       //requisitos não funcionais
     private LocalDateTime dataHoraDaAlteracao;      //requisitos não funcionais
 
-     public Cliente(ClienteRequest clienteRequest) {    //cliente só será criado a partir de uma request (post)
+    public Cliente(ClienteRequest clienteRequest) {    //cliente só será criado a partir de uma request (post)
         this.nomeCompleto = clienteRequest.getNomeCompleto();
         this.email = clienteRequest.getEmail();
         this.celular = clienteRequest.getCelular();

@@ -13,6 +13,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class ClienteApplicationService implements ClienteService {
     private final ClienteRepository clienteRepository;
+
     @Override
     public ClienteResponse criaCliente(ClienteRequest clienteRequest) {
         log.info("[start] ClienteApplicationService - criaCliente");
