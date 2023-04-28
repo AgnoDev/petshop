@@ -22,4 +22,5 @@ public class ClienteRequest {
     private String cpf;
     @NotNull
     private boolean aceitaTermos;
+
 }

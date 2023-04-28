@@ -1,5 +1,6 @@
 package br.com.paidepet.petshop.cliente.domain;
 
+import br.com.paidepet.petshop.cliente.application.api.ClienteRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -35,18 +36,15 @@ public class Cliente {
     private LocalDateTime dataHoraDoCadastro;       //requisitos não funcionais
     private LocalDateTime dataHoraDaAlteracao;      //requisitos não funcionais
 
-    public Cliente(String nomeCompleto, String email,
-                   String celular, String telefone,
-                   Sexo sexo, LocalDate dataNascimento,
-                   String cpf, boolean aceitaTermos) {
-        this.nomeCompleto = nomeCompleto;
-        this.email = email;
-        this.celular = celular;
-        this.telefone = telefone;
-        this.sexo = sexo;
-        this.dataNascimento = dataNascimento;
-        this.cpf = cpf;
-        this.aceitaTermos = aceitaTermos;
+     public Cliente(ClienteRequest clienteRequest) {    //cliente só será criado a partir de uma request (post)
+        this.nomeCompleto = clienteRequest.getNomeCompleto();
+        this.email = clienteRequest.getEmail();
+        this.celular = clienteRequest.getCelular();
+        this.telefone = clienteRequest.getTelefone();
+        this.sexo = clienteRequest.getSexo();
+        this.dataNascimento = clienteRequest.getDataNascimento();
+        this.cpf = clienteRequest.getCpf();
+        this.aceitaTermos = clienteRequest.isAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 }
