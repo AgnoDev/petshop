@@ -5,6 +5,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @Log4j2
 @RequiredArgsConstructor    //gera um construtor para o ClienteService só com atributos 'final'.
@@ -22,9 +24,12 @@ public class ClienteController implements ClienteAPI {
         return clienteCriado;
         //"clienteService vai criaCliente baseado no clienteRequest passado na requisição do front"
         //"e devolve um ClienteResponse chamado clienteCriado passando essa resposta no return"
+    }
 
-        
-
-
+    @Override
+    public List<ClienteListResponse> getAllClientes() {
+        log.info("[start] ClienteController - getAllClientes");
+        log.info("[finish] ClienteController - getAllClientes");
+        return null;
     }
 }
