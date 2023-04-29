@@ -33,6 +33,6 @@ public class ClienteApplicationService implements ClienteService {
         log.info("[start] ClienteApplicationService - getAllClientes");
         List<Cliente> clientes = clienteRepository.getAllClientes();
         log.info("[finish] ClienteApplicationService - getAllClientes");
-        return ClienteListResponse.converte(clientes);
+        return ClienteListResponse.converter(clientes);
     }
 }
