@@ -5,6 +5,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -29,7 +30,8 @@ public class ClienteController implements ClienteAPI {
     @Override
     public List<ClienteListResponse> getAllClientes() {
         log.info("[start] ClienteController - getAllClientes");
+        List<ClienteListResponse> getAllClientes = clienteService.getAllClientes();
         log.info("[finish] ClienteController - getAllClientes");
-        return null;
+        return getAllClientes;
     }
 }
