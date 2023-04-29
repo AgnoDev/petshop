@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @Log4j2
@@ -33,5 +34,13 @@ public class ClienteController implements ClienteAPI {
         List<ClienteListResponse> getAllClientes = clienteService.getAllClientes();
         log.info("[finish] ClienteController - getAllClientes");
         return getAllClientes;
+    }
+
+    @Override
+    public ClienteResponseById getClienteById(UUID idCliente) {
+        log.info("[start] ClienteController - getClienteById");
+        log.info("[idCliente] {}", idCliente);
+        log.info("[finish] ClienteController - getClienteById");
+        return null;
     }
 }
