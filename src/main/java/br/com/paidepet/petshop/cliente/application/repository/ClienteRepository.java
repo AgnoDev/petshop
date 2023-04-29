@@ -1,7 +1,11 @@
 package br.com.paidepet.petshop.cliente.application.repository;
 
+import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
 import br.com.paidepet.petshop.cliente.domain.Cliente;
+
+import java.util.List;
 
 public interface ClienteRepository {
     Cliente salva(Cliente cliente);
+    List<Cliente> getAllClientes(); // List<ClienteListResponse> getAllClientes(); não pode retornar ClienteListResponse, só Cliente
 }
