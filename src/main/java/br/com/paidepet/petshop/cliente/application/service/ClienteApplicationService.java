@@ -9,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -33,6 +32,6 @@ public class ClienteApplicationService implements ClienteService {
         log.info("[start] ClienteApplicationService - getAllClientes");
         List<Cliente> clientes = clienteRepository.getAllClientes();
         log.info("[finish] ClienteApplicationService - getAllClientes");
-        return ClienteListResponse.converter(clientes);
+        return ClienteListResponse.converterMap(clientes);
     }
 }
