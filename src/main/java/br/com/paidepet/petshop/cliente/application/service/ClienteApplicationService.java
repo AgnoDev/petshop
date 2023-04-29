@@ -3,6 +3,7 @@ package br.com.paidepet.petshop.cliente.application.service;
 import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
 import br.com.paidepet.petshop.cliente.application.api.ClienteRequest;
 import br.com.paidepet.petshop.cliente.application.api.ClienteResponse;
+import br.com.paidepet.petshop.cliente.application.api.ClienteResponseById;
 import br.com.paidepet.petshop.cliente.application.repository.ClienteRepository;
 import br.com.paidepet.petshop.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +11,7 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 @Log4j2
@@ -33,5 +35,13 @@ public class ClienteApplicationService implements ClienteService {
         List<Cliente> clientes = clienteRepository.getAllClientes();
         log.info("[finish] ClienteApplicationService - getAllClientes");
         return ClienteListResponse.converterMap(clientes);
+    }
+
+    @Override
+    public ClienteResponseById getClienteById(UUID idCliente) {
+        log.info("[start] ClienteApplicationService - getClienteById");
+        log.info("[idCliente] {}", idCliente);
+        log.info("[finish] ClienteApplicationService - getClienteById");
+        return null;
     }
 }

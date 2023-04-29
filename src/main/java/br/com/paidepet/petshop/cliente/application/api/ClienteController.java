@@ -40,7 +40,8 @@ public class ClienteController implements ClienteAPI {
     public ClienteResponseById getClienteById(UUID idCliente) {
         log.info("[start] ClienteController - getClienteById");
         log.info("[idCliente] {}", idCliente);
+        ClienteResponseById clienteResponseById = clienteService.getClienteById(idCliente);
         log.info("[finish] ClienteController - getClienteById");
-        return null;
+        return clienteResponseById;
     }
 }
