@@ -30,6 +30,7 @@ public class Cliente {
     @NotBlank
     private String celular;
     private String telefone;
+    @Enumerated(EnumType.STRING)
     private Sexo sexo;
     @NotNull
     private LocalDate dataNascimento;
