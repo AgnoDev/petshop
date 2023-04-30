@@ -12,5 +12,5 @@ public interface ClienteService {
     ClienteResponse criaCliente(ClienteRequest clienteRequest);
     List<ClienteListResponse> getAllClientes();
     ClienteResponseById getClienteById(UUID idCliente);
-    void deletaClienteById(UUID idCliente);
+    void deleteClienteById(UUID idCliente);
 }

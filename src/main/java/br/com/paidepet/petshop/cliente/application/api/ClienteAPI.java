@@ -1,10 +1,8 @@
 package br.com.paidepet.petshop.cliente.application.api;
 
 import jakarta.validation.Valid;
-import lombok.Getter;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import org.w3c.dom.stylesheets.LinkStyle;
 
 import java.util.List;
 import java.util.UUID;
@@ -26,6 +24,6 @@ public interface ClienteAPI {   //implementa contrato - separa responsabilidades
 
     @DeleteMapping(value = "/{idCliente}")
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
-    void deletaClienteById(@PathVariable UUID idCliente);
+    void deleteClienteById(@PathVariable UUID idCliente);
 
 }
