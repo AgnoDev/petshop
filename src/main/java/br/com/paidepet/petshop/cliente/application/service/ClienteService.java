@@ -1,9 +1,6 @@
 package br.com.paidepet.petshop.cliente.application.service;
 
-import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
-import br.com.paidepet.petshop.cliente.application.api.ClienteRequest;
-import br.com.paidepet.petshop.cliente.application.api.ClienteResponse;
-import br.com.paidepet.petshop.cliente.application.api.ClienteResponseById;
+import br.com.paidepet.petshop.cliente.application.api.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -13,4 +10,6 @@ public interface ClienteService {
     List<ClienteListResponse> getAllClientes();
     ClienteResponseById getClienteById(UUID idCliente);
     void deleteClienteById(UUID idCliente);
+
+    void patchCliente(UUID idCliente, ClientePatchRequest clientePatchRequest);
 }

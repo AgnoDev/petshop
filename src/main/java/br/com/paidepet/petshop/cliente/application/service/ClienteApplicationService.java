@@ -1,9 +1,6 @@
 package br.com.paidepet.petshop.cliente.application.service;
 
-import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
-import br.com.paidepet.petshop.cliente.application.api.ClienteRequest;
-import br.com.paidepet.petshop.cliente.application.api.ClienteResponse;
-import br.com.paidepet.petshop.cliente.application.api.ClienteResponseById;
+import br.com.paidepet.petshop.cliente.application.api.*;
 import br.com.paidepet.petshop.cliente.application.repository.ClienteRepository;
 import br.com.paidepet.petshop.cliente.domain.Cliente;
 import lombok.RequiredArgsConstructor;
@@ -54,5 +51,15 @@ public class ClienteApplicationService implements ClienteService {
         Cliente cliente = clienteRepository.getClienteById(idCliente);
         clienteRepository.deleteClienteById(cliente);
         log.info("[finish] ClienteApplicationService - deleteClienteById");
+    }
+
+    @Override
+    public void patchCliente(UUID idCliente, ClientePatchRequest clientePatchRequest) {
+        log.info("[start] ClienteApplicationService - patchCliente");
+        log.info("[idCliente] {}", idCliente);
+        Cliente cliente = clienteRepository.getClienteById(idCliente);
+        cliente.petchCliente(clientePatchRequest);
+        clienteRepository.salva(cliente);
+        log.info("[finish] ClienteApplicationService - patchCliente");
     }
 }

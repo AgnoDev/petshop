@@ -1,5 +1,6 @@
 package br.com.paidepet.petshop.cliente.domain;
 
+import br.com.paidepet.petshop.cliente.application.api.ClientePatchRequest;
 import br.com.paidepet.petshop.cliente.application.api.ClienteRequest;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
@@ -50,5 +51,15 @@ public class Cliente {
         this.cpf = clienteRequest.getCpf();
         this.aceitaTermos = clienteRequest.isAceitaTermos();
         this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void petchCliente(ClientePatchRequest clientePatchRequest) {
+        this.nomeCompleto = clientePatchRequest.getNomeCompleto();
+        this.celular = clientePatchRequest.getCelular();
+        this.telefone = clientePatchRequest.getTelefone();
+        this.sexo = clientePatchRequest.getSexo();
+        this.dataNascimento = clientePatchRequest.getDataNascimento();
+        this.aceitaTermos = clientePatchRequest.isAceitaTermos();
+        this.dataHoraDaAlteracao = LocalDateTime.now();
     }
 }
