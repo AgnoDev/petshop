@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ClienteRepository {
-    Cliente salva(Cliente cliente);
+    Cliente postCliente(Cliente cliente);
     List<Cliente> getAllClientes(); // List<ClienteListResponse> getAllClientes(); não pode retornar ClienteListResponse, só Cliente
     Cliente getClienteById(UUID idCliente);
     void deleteClienteById(Cliente cliente);

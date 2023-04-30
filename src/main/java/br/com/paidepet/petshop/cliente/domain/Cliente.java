@@ -53,7 +53,7 @@ public class Cliente {
         this.dataHoraDoCadastro = LocalDateTime.now();
     }
 
-    public void petchCliente(ClientePatchRequest clientePatchRequest) {
+    public void patchCliente(ClientePatchRequest clientePatchRequest) {
         this.nomeCompleto = clientePatchRequest.getNomeCompleto();
         this.celular = clientePatchRequest.getCelular();
         this.telefone = clientePatchRequest.getTelefone();

@@ -16,10 +16,10 @@ import java.util.UUID;
 public class ClienteInfraRepository implements ClienteRepository {
     private final ClienteSpringDataJpaRepository clienteSpringDataJpaRepository;
     @Override
-    public Cliente salva(Cliente cliente) {
-        log.info("[start] ClienteInfraRepository - salva");
+    public Cliente postCliente(Cliente cliente) {
+        log.info("[start] ClienteInfraRepository - postCliente");
         clienteSpringDataJpaRepository.save(cliente);
-        log.info("[finish] ClienteInfraRepository - salva");
+        log.info("[finish] ClienteInfraRepository - postCliente");
         return cliente;
     }
 

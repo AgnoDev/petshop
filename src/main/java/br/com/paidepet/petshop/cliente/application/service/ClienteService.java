@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.UUID;
 
 public interface ClienteService {
-    ClienteResponse criaCliente(ClienteRequest clienteRequest);
+    ClienteResponse postCliente(ClienteRequest clienteRequest);
     List<ClienteListResponse> getAllClientes();
     ClienteResponseById getClienteById(UUID idCliente);
     void deleteClienteById(UUID idCliente);

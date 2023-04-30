@@ -17,10 +17,10 @@ public class ClienteApplicationService implements ClienteService {
     private final ClienteRepository clienteRepository;
 
     @Override
-    public ClienteResponse criaCliente(ClienteRequest clienteRequest) {
-        log.info("[start] ClienteApplicationService - criaCliente");
-        Cliente cliente = clienteRepository.salva(new Cliente(clienteRequest));
-        log.info("[finish] ClienteApplicationService - criaCliente");
+    public ClienteResponse postCliente(ClienteRequest clienteRequest) {
+        log.info("[start] ClienteApplicationService - postCliente");
+        Cliente cliente = clienteRepository.postCliente(new Cliente(clienteRequest));
+        log.info("[finish] ClienteApplicationService - postCliente");
         return ClienteResponse.builder()
                 .idCliente(cliente.getIdCliente())
                 .build();
@@ -58,8 +58,8 @@ public class ClienteApplicationService implements ClienteService {
         log.info("[start] ClienteApplicationService - patchCliente");
         log.info("[idCliente] {}", idCliente);
         Cliente cliente = clienteRepository.getClienteById(idCliente);
-        cliente.petchCliente(clientePatchRequest);
-        clienteRepository.salva(cliente);
+        cliente.patchCliente(clientePatchRequest);
+        clienteRepository.postCliente(cliente);
         log.info("[finish] ClienteApplicationService - patchCliente");
     }
 }
