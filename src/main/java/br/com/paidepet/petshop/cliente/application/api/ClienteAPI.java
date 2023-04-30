@@ -24,4 +24,8 @@ public interface ClienteAPI {   //implementa contrato - separa responsabilidades
     @ResponseStatus(code = HttpStatus.OK)
     ClienteResponseById getClienteById(@PathVariable UUID idCliente);
 
+    @DeleteMapping(value = "/{idCliente}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletaClienteById(@PathVariable UUID idCliente);
+
 }
