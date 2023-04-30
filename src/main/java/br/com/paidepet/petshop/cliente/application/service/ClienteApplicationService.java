@@ -41,7 +41,9 @@ public class ClienteApplicationService implements ClienteService {
     public ClienteResponseById getClienteById(UUID idCliente) {
         log.info("[start] ClienteApplicationService - getClienteById");
         log.info("[idCliente] {}", idCliente);
+        Cliente cliente = clienteRepository.getClienteById(idCliente);
         log.info("[finish] ClienteApplicationService - getClienteById");
-        return null;
+        return new ClienteResponseById(cliente);    //cria um novo modelo de resposta conforme a regra de negocio, e tbm por segurança
+        //o cliente passado no parâmetro de ClienteResponseById, é o que foi gerado pelo clienteRepository(atraves do metodo getClienteById)
     }
 }

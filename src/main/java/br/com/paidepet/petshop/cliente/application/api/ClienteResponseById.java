@@ -1,5 +1,6 @@
 package br.com.paidepet.petshop.cliente.application.api;
 
+import br.com.paidepet.petshop.cliente.domain.Cliente;
 import br.com.paidepet.petshop.cliente.domain.Sexo;
 import lombok.Value;
 
@@ -16,4 +17,16 @@ public class ClienteResponseById {
     private Sexo sexo;
     private Boolean aceitaTermos;
     private LocalDateTime dataHoraDoCadastro;
+
+    public ClienteResponseById(Cliente cliente) {
+        this.idCliente = cliente.getIdCliente();
+        this.nomeCompleto = cliente.getNomeCompleto();
+        this.cpf = cliente.getCpf();
+        this.email = cliente.getEmail();
+        this.celular = cliente.getCelular();
+        this.telefone = cliente.getTelefone();
+        this.sexo = cliente.getSexo();
+        this.aceitaTermos = cliente.isAceitaTermos();
+        this.dataHoraDoCadastro = cliente.getDataHoraDoCadastro();
+    }
 }
