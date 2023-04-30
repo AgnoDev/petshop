@@ -26,4 +26,8 @@ public interface ClienteAPI {   //implementa contrato - separa responsabilidades
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deleteClienteById(@PathVariable UUID idCliente);
 
+    @PatchMapping(value = "/{idCliente}")   // para alterações parciais (nesse caso, id, cpf e email não podem ser alterados)
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchCliente(@PathVariable UUID idCliente, @Valid  @RequestBody ClientePatchRequest clientePatchRequest);
+
 }

@@ -1,8 +1,10 @@
 package br.com.paidepet.petshop.cliente.application.api;
 
 import br.com.paidepet.petshop.cliente.application.service.ClienteService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -44,13 +46,17 @@ public class ClienteController implements ClienteAPI {
         log.info("[finish] ClienteController - getClienteById");
         return clienteResponseById;
     }
-
     @Override
     public void deleteClienteById(UUID idCliente) {
         log.info("[start] ClienteController - deleteClienteById");
         log.info("[idCliente] {}", idCliente);
         clienteService.deleteClienteById(idCliente);
         log.info("[finish] ClienteController - deleteClienteById");
-
+    }
+    @Override
+    public void patchCliente(UUID idCliente, @Valid ClientePatchRequest clientePatchRequest) {
+        log.info("[start] ClienteController - patchCliente");
+        log.info("[idCliente] {}", idCliente);
+        log.info("[finish] ClienteController - patchCliente");
     }
 }
