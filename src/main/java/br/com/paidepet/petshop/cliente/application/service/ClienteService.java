@@ -1,7 +1,6 @@
 package br.com.paidepet.petshop.cliente.application.service;
 
 import br.com.paidepet.petshop.cliente.application.api.*;
-
 import java.util.List;
 import java.util.UUID;
 

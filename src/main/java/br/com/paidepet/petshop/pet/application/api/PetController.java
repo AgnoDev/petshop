@@ -3,6 +3,10 @@ package br.com.paidepet.petshop.pet.application.api;
 import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
 import br.com.paidepet.petshop.cliente.application.api.ClientePatchRequest;
 import br.com.paidepet.petshop.cliente.application.api.ClienteResponseById;
+import br.com.paidepet.petshop.pet.application.service.PetService;
+import br.com.paidepet.petshop.pet.domain.Pet;
+import jakarta.validation.Valid;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -10,13 +14,16 @@ import java.util.List;
 import java.util.UUID;
 @RestController
 @Log4j2
+@RequiredArgsConstructor
 public class PetController implements PetAPI {
+    private final PetService petService;
     @Override
-    public PetResponse postPet(UUID idCliente, PetRequest petRequest) {
+    public PetResponse postPet(UUID idCliente, @Valid PetRequest petRequest) {
         log.info("[start] PetController - postPet");
         log.info("[idCliente] {}", idCliente);
+        PetResponse postPet = petService.postPet(idCliente, petRequest);
         log.info("[finish] PetController - postPet");
-        return null;
+        return postPet;
     }
 
 //    @Override
