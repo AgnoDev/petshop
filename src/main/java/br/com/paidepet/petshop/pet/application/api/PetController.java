@@ -34,6 +34,15 @@ public class PetController implements PetAPI {
         return getPetsByCliente;
     }
 
+    @Override
+    public PetResponseById getPetById(UUID idCliente, UUID idPet) {
+        log.info("[start] PetController - getPetById");
+        log.info("[idCliente] {} - [idPet] {}", idCliente, idPet);
+        log.info("[finish] PetController - getPetById");
+        return null;
+    }
+
+
 //    @Override
 //    public List<ClienteListResponse> getAllClientes() {
 //        return null;
