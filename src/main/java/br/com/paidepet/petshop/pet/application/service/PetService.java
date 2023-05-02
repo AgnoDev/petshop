@@ -1,10 +1,6 @@
 package br.com.paidepet.petshop.pet.application.service;
 
-import br.com.paidepet.petshop.pet.application.api.PetClienteListResponse;
-import br.com.paidepet.petshop.pet.application.api.PetRequest;
-import br.com.paidepet.petshop.pet.application.api.PetResponse;
-import br.com.paidepet.petshop.pet.application.api.PetResponseById;
-import br.com.paidepet.petshop.pet.domain.Pet;
+import br.com.paidepet.petshop.pet.application.api.*;
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -14,4 +10,5 @@ public interface PetService {
     List<PetClienteListResponse> getPetsByCliente(UUID idCliente);
     PetResponseById getPetById(UUID idCliente, UUID idPet);
     void deletePetById(UUID idCliente, UUID idPet);
+    void patchPet(UUID idCliente, UUID idPet, PetPatchRequest petPatchRequest);
 }

@@ -1,10 +1,7 @@
 package br.com.paidepet.petshop.pet.application.service;
 
 import br.com.paidepet.petshop.cliente.application.service.ClienteService;
-import br.com.paidepet.petshop.pet.application.api.PetClienteListResponse;
-import br.com.paidepet.petshop.pet.application.api.PetRequest;
-import br.com.paidepet.petshop.pet.application.api.PetResponse;
-import br.com.paidepet.petshop.pet.application.api.PetResponseById;
+import br.com.paidepet.petshop.pet.application.api.*;
 import br.com.paidepet.petshop.pet.application.repository.PetRepository;
 import br.com.paidepet.petshop.pet.domain.Pet;
 import jakarta.validation.Valid;
@@ -55,6 +52,17 @@ public class PetAppService implements PetService {
         Pet pet = petRepository.getPetById(idPet);
         petRepository.deletePetById(pet);
         log.info("[finish] PetAppService - deletePetById");
+
+    }
+
+    @Override
+    public void patchPet(UUID idCliente, UUID idPet, PetPatchRequest petPatchRequest) {
+        log.info("[start] PetAppService - patchPet");
+        clienteService.getClienteById(idCliente);
+        Pet pet = petRepository.getPetById(idPet);
+        pet.patchPet(petPatchRequest);
+        petRepository.postPet(pet);
+        log.info("[finish] PetAppService - patchPet");
 
     }
 }
