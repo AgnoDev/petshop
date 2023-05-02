@@ -10,4 +10,5 @@ public interface PetRepository {
     Pet postPet(Pet pet);
     List<Pet> getPetsByCliente(UUID idCliente);
     Pet getPetById(UUID idPet);
+    void deletePetById(Pet pet);
 }
