@@ -28,7 +28,8 @@ public interface PetAPI {
     @ResponseStatus(code = HttpStatus.NO_CONTENT)
     void deletePetById(@PathVariable UUID idCliente, @PathVariable UUID idPet);
 
-//    @PatchMapping(value = "/{idCliente}")
-//    @ResponseStatus(code = HttpStatus.NO_CONTENT)
-//    void patchCliente(@PathVariable UUID idCliente, @Valid @RequestBody ClientePatchRequest clientePatchRequest);
+    @PatchMapping(value = "/{idPet}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void patchPet(@PathVariable UUID idCliente, @PathVariable UUID idPet,
+                         @Valid @RequestBody PetPatchRequest petPatchRequest);
 }

@@ -1,5 +1,6 @@
 package br.com.paidepet.petshop.pet.domain;
 
+import br.com.paidepet.petshop.pet.application.api.PetPatchRequest;
 import br.com.paidepet.petshop.pet.application.api.PetRequest;
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
@@ -57,5 +58,19 @@ public class Pet {
         this.rga = petRequest.getRga();
         this.peso = petRequest.getPeso();
         this.dataHoraDoCadastro = LocalDateTime.now();
+    }
+
+    public void patchPet(PetPatchRequest petPatchRequest) {
+        this.nomePet = petPatchRequest.getNomePet();
+        this.porte = petPatchRequest.getPorte();
+        this.tipoPet = petPatchRequest.getTipoPet();
+        this.microchip = petPatchRequest.getMicrochip();
+        this.raca = petPatchRequest.getRaca();
+        this.sexoPet = petPatchRequest.getSexoPet();
+        this.pelagemCor = petPatchRequest.getPelagemCor();
+        this.dataNascimento = petPatchRequest.getDataNascimento();
+        this.rga = petPatchRequest.getRga();
+        this.peso = petPatchRequest.getPeso();
+        this.dataHoraDaAlteracao = LocalDateTime.now();
     }
 }
