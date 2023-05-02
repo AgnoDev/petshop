@@ -19,14 +19,15 @@ public interface PetAPI {
     @GetMapping
     @ResponseStatus(code = HttpStatus.OK)
     List<PetClienteListResponse> getPetsByCliente(@PathVariable UUID idCliente);
+
     @GetMapping(value = "/{idPet}")
     @ResponseStatus(code = HttpStatus.OK)
     PetResponseById getPetById(@PathVariable UUID idCliente, @PathVariable UUID idPet);
 
-//    @DeleteMapping(value = "/{idCliente}")
-//    @ResponseStatus(code = HttpStatus.NO_CONTENT)
-//    void deleteClienteById(@PathVariable UUID idCliente);
-//
+    @DeleteMapping(value = "/{idPet}")
+    @ResponseStatus(code = HttpStatus.NO_CONTENT)
+    void deletePetById(@PathVariable UUID idCliente, @PathVariable UUID idPet);
+
 //    @PatchMapping(value = "/{idCliente}")
 //    @ResponseStatus(code = HttpStatus.NO_CONTENT)
 //    void patchCliente(@PathVariable UUID idCliente, @Valid @RequestBody ClientePatchRequest clientePatchRequest);

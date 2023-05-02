@@ -5,6 +5,7 @@ import br.com.paidepet.petshop.pet.application.api.PetClienteListResponse;
 import br.com.paidepet.petshop.pet.application.api.PetRequest;
 import br.com.paidepet.petshop.pet.application.api.PetResponse;
 import br.com.paidepet.petshop.pet.application.api.PetResponseById;
+import br.com.paidepet.petshop.pet.application.repository.PetRepository;
 import br.com.paidepet.petshop.pet.domain.Pet;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
