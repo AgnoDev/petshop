@@ -1,5 +1,6 @@
 package br.com.paidepet.petshop.pet.application.api;
 
+import br.com.paidepet.petshop.pet.domain.Pet;
 import br.com.paidepet.petshop.pet.domain.Porte;
 import br.com.paidepet.petshop.pet.domain.SexoPet;
 import br.com.paidepet.petshop.pet.domain.TipoPet;
@@ -26,4 +27,19 @@ public class PetResponseById {
     private LocalDate dataNascimento;
     private String rga;
     private Integer peso;
+
+    public PetResponseById(Pet pet) {
+        this.idPet = pet.getIdPet();
+        this.idClienteRef = pet.getIdClienteRef();
+        this.nomePet = pet.getNomePet();
+        this.porte = pet.getPorte();
+        this.tipoPet = pet.getTipoPet();
+        this.microchip = pet.getMicrochip();
+        this.raca = pet.getRaca();
+        this.sexoPet = pet.getSexoPet();
+        this.pelagemCor = pet.getPelagemCor();
+        this.dataNascimento = pet.getDataNascimento();
+        this.rga = pet.getRga();
+        this.peso = pet.getPeso();
+    }
 }
