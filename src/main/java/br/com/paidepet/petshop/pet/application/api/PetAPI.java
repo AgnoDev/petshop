@@ -16,9 +16,9 @@ public interface PetAPI {
     PetResponse postPet(@PathVariable UUID idCliente,
                         @Valid @RequestBody PetRequest petRequest);
 
-//    @GetMapping
-//    @ResponseStatus(code = HttpStatus.OK)
-//    List<ClienteListResponse> getAllClientes();
+    @GetMapping
+    @ResponseStatus(code = HttpStatus.OK)
+    List<PetClienteListResponse> getPetsByCliente(@PathVariable UUID idCliente);
 //
 //    @GetMapping(value = "/{idCliente}")
 //    @ResponseStatus(code = HttpStatus.OK)

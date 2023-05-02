@@ -1,6 +1,5 @@
 package br.com.paidepet.petshop.pet.application.api;
 
-import br.com.paidepet.petshop.cliente.application.api.ClienteListResponse;
 import br.com.paidepet.petshop.cliente.application.api.ClientePatchRequest;
 import br.com.paidepet.petshop.cliente.application.api.ClienteResponseById;
 import br.com.paidepet.petshop.pet.application.service.PetService;
@@ -24,6 +23,14 @@ public class PetController implements PetAPI {
         PetResponse postPet = petService.postPet(idCliente, petRequest);
         log.info("[finish] PetController - postPet");
         return postPet;
+    }
+
+    @Override
+    public List<PetClienteListResponse> getPetsByCliente(UUID idCliente) {
+        log.info("[start] PetController - getPetsByCliente");
+        log.info("[idCliente] {}", idCliente);
+        log.info("[finish] PetController - getPetsByCliente");
+        return null;
     }
 
 //    @Override
