@@ -36,7 +36,7 @@ public class ClienteInfraRepository implements ClienteRepository {
         log.info("[start] ClienteInfraRepository - getClienteById");
         log.info("[idCliente] {}", idCliente);
         Cliente cliente = clienteSpringDataJpaRepository.findById(idCliente)            //tratamento de exceção é mais popular na camada Service
-                .orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));    //mas é melhor no Repository
+                .orElseThrow(() -> new RuntimeException("CLIENTE NÃO ENCONTRADO!"));    //mas é melhor no Repository
         log.info("[finish] ClienteInfraRepository - getClienteById");
         return cliente;
     }
